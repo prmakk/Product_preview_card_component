@@ -1,0 +1,258 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/*MAIN CSS CODE BELOW*/
+
+html{
+    background-color: hsl(30, 38%, 92%);
+}
+
+@media screen and (min-width:720px){
+    main{
+        margin-top: 175px;
+    }
+    .card{
+        width: 740px;
+        height: 550px;
+        border-radius: 10px;
+        margin: 0 auto;
+        background-color: #fff;
+        display: flex;
+    }
+    .card img{
+        height: 100%;
+        border-radius: 10px 0px 0px 10px;
+    }
+    .card__price{
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .card__right{
+        padding: 40px;
+        flex-basis: 50%;
+    }
+    .card__left{
+      flex-basis: 50%;
+      background-image: url(images/image-product-desktop.jpg);
+      background-size: cover;
+      border-radius: 10px 0px 0px 10px;
+    }
+    .card__right-span{
+        color: hsl(228, 12%, 48%);
+        font-family: Montserrat, sans-serif;
+    }
+    .card__right-h1{
+        padding-top: 10px;
+        color: hsl(212, 21%, 14%);
+        font-family: Fraunces, serif;
+        font-size: 48px;
+        line-height: 45px;
+    }
+    .card__right-p{
+        color: hsl(228, 12%, 48%);
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+        padding-top: 30px;
+    }
+    .card__price-h1{
+        font-family: Fraunces, serif;
+        font-size: 45px;
+        color:hsl(158, 36%, 37%);
+    }
+    .card__price-p{
+        margin-left: 20px;
+        font-family: Montserrat, sans-serif;
+        text-decoration: line-through;
+        color: hsl(228, 12%, 48%);
+    }
+    button{
+        width: 100%;
+        margin-top: 20px;
+        height: 65px;
+        border: none;
+        background-color: hsl(158, 36%, 37%);
+        border-radius: 15px;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: hsl(158, 36%, 25%);
+    }
+    .button__text{
+        font-family: Montserrat, serif;
+        color: #fff;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    .cart-img{
+        width: 20px;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:719px){
+    .card{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 3%;
+        padding: 20px;
+    }
+    .card .car__top{
+        margin-bottom: 0;
+        padding: 0;
+    }
+    .card__top{
+        background-image: url(images/image-product-mobile.jpg);
+        background-size:auto;
+        height: 480px;
+        background-position: center;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .card__price{
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .card__right{
+        border-radius: 0px 0px 10px 10px;
+        padding: 40px;
+        flex-basis: 50%;
+        background-color: #fff;
+    }
+    .card__right-span{
+        color: hsl(228, 12%, 48%);
+        font-family: Montserrat, sans-serif;
+    }
+    .card__right-h1{
+        padding-top: 10px;
+        color: hsl(212, 21%, 14%);
+        font-family: Fraunces, serif;
+        font-size: 48px;
+        line-height: 45px;
+    }
+    .card__right-p{
+        color: hsl(228, 12%, 48%);
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+        padding-top: 30px;
+    }
+    .card__price-h1{
+        font-family: Fraunces, serif;
+        font-size: 45px;
+        color:hsl(158, 36%, 37%);
+    }
+    .card__price-p{
+        margin-left: 20px;
+        font-family: Montserrat, sans-serif;
+        text-decoration: line-through;
+        color: hsl(228, 12%, 48%);
+    }
+    button{
+        width: 100%;
+        margin-top: 20px;
+        height: 65px;
+        border: none;
+        background-color: hsl(158, 36%, 37%);
+        border-radius: 15px;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: hsl(158, 36%, 25%);
+    }
+    .button__text{
+        font-family: Montserrat, serif;
+        color: #fff;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    .cart-img{
+        width: 20px;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
